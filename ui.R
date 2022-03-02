@@ -1,9 +1,7 @@
 library(shiny)
 
 # Training set
-ind <- sample(2, nrow(over), replace = TRUE, prob = c(0.8, 0.2))
-train <- over[ind==1,]
-test <- over[ind==2,]
+TrainSet <- read.csv("training.csv", header = TRUE)
 
 pageWithSidebar(
                   
