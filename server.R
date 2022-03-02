@@ -30,7 +30,7 @@ shinyServer(function(input, output, session) {
     write.table(input,"input.csv", sep=",", quote = FALSE, row.names = FALSE, col.names = FALSE)
     
     test <- read.csv(paste("input", ".csv", sep=""), header = TRUE)
-    test <- rbind(over[1, ] , test)
+    test <- rbind(train[1, ] , test)
     test$cd4count <- factor(test$cd4count, levels = "0", "1")
     
     
