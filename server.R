@@ -4,7 +4,7 @@ library(ROSE)
 # Read in the RF model
 model <- readRDS("model.rds")
 
-shinyServer(function(input, output, session) {
+server(function(input, output, session) {
   # Input 
   setInput <- reactive({  
     
