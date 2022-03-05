@@ -1,5 +1,5 @@
 library(shiny)
-library(shinytheme)
+library(shinythemes)
 
 # Training set
 train <- read.csv("training.csv", header = TRUE)
