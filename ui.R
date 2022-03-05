@@ -4,8 +4,7 @@ library(shinythemes)
 # Training set
 train <- read.csv("training.csv", header = TRUE)
 
-fluidPage(theme = shinytheme("united"),
-                
+pageWithSidebar(                
                 # Page header
                 headerPanel("lymphocyte prediction/ Laboratoire d'immunologie"),
                 
