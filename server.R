@@ -7,7 +7,7 @@ model <- readRDS("model.rds")
 
 shinyServer(function(input, output, session) {  
   # Input 
-  setInput <- reactive({  
+   datasetInput <- reactive({  
     
     # outlook,temperature,humidity,windy,play
     df <- data.frame(
