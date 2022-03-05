@@ -58,7 +58,7 @@ shinyServer(function(input, output, session) {
   })
   
   # Prediction results table
-  output$table <- renderTable({
+  output$tabledata <- renderTable({
     if (input$submitbutton>0) { 
       isolate(setInput()) 
     } 
