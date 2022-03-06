@@ -1,6 +1,7 @@
 library(shiny)
 library(shinythemes)
 library(data.table)
+library(RCurl)
 
 
 # Training set
