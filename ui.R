@@ -40,13 +40,14 @@ pageWithSidebar(
                               selected = "0"),
                   
                   actionButton("submitbutton", "Submit", class = "btn btn-primary")
-                ),
-                
-                mainPanel(
-                  tags$label(h3('Status/Output')), # Status/Output Text Box
-                  verbatimTextOutput('contents'),
-                  tableOutput('tabledata') # Prediction results table
+),
+
+  
+mainPanel(
+          tags$label(h3('Status/Output')), # Status/Output Text Box
+          verbatimTextOutput('contents'),
+          tableOutput('tabledata') # Prediction results table
                   
-                )
+  )
 )
 
