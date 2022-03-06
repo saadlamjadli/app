@@ -4,7 +4,7 @@ library(RCurl)
 
 
 # Read in the RF model
-over <- read.csv("https://github.com/saadlamjadli/app/blob/dd4b5187316c703eccc62d0eb3b94438a5987975/over.csv")
+over <- read.csv("https://raw.githubusercontent.com/saadlamjadli/app/main/over.csv")
 
 model <- readRDS("model.rds")
 
