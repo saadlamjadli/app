@@ -2,6 +2,12 @@ library(data.table)
 library(xgboost)
 library(RCurl)
 
+over <- read.csv("https://raw.githubusercontent.com/saadlamjadli/app/main/over.csv")
+over$cd4count <- as.factor(over$cd4count)
+over$STADE <- as.factor(over$STADE)
+over$tlc12 <- as.factor(over$tlc12)
+over$SEXE <- as.factor(over$SEXE)
+
 
 # Read in the RF model
 model <- readRDS("model.rds")
