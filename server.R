@@ -4,8 +4,6 @@ library(RCurl)
 
 
 # Read in the RF model
-over <- read.csv("https://raw.githubusercontent.com/saadlamjadli/app/main/over.csv")
-
 model <- readRDS("model.rds")
 
 shinyServer(function(input, output, session) {  
