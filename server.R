@@ -35,14 +35,9 @@ shinyServer(function(input, output, session) {
     df <- rbind(df, cd4count)
     input <- transpose(df)
     write.table(input,"input.csv", sep=",", quote = FALSE, row.names = FALSE, col.names = FALSE)
-    
     test <- read.csv(paste("input", ".csv", sep=""), header = TRUE)
     test <- rbind(data12[1,], test)
     test <- test[-1,]
-    
-
-    
-    
     Output <- data.frame(Prediction=predict(model,test), round(predict(model,test,type="prob"), 3))
     print(Output)
     
