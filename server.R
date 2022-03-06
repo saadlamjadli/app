@@ -1,5 +1,7 @@
 library(data.table)
 library(xgboost)
+library(RCurl)
+
 
 # Read in the RF model
 model <- readRDS("model.rds")
