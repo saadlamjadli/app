@@ -2,7 +2,7 @@ library(data.table)
 library(xgboost)
 library(RCurl)
 
-
+over <- read.csv("https://raw.githubusercontent.com/saadlamjadli/app/main/over.csv") 
 
 # Read in the RF model
 model <- readRDS("model.rds")
