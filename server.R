@@ -2,7 +2,6 @@ library(data.table)
 library(xgboost)
 library(RCurl)
 
-over <- read.csv("over.csv", header = TRUE)
 
 
 # Read in the RF model
