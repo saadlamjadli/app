@@ -45,7 +45,7 @@ pageWithSidebar(
                 mainPanel(
                   tags$label(h3('Status/Output')), # Status/Output Text Box
                   verbatimTextOutput('contents'),
-                  tableOutput('table') # Prediction results table
+                  tableOutput('tabledata') # Prediction results table
                   
                 )
 )
