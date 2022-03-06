@@ -5,7 +5,7 @@ library(RCurl)
 
 
 # Training set
-over <- read.csv("over.csv", header = TRUE)
+over <- read.csv("https://raw.githubusercontent.com/saadlamjadli/app/main/over.csv") 
 
 pageWithSidebar(                
                 # Page header
