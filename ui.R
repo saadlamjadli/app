@@ -5,11 +5,7 @@ library(RCurl)
 
 
 # Training set
-over <- read.csv("https://raw.githubusercontent.com/saadlamjadli/app/main/over.csv")
-over$cd4count <- as.factor(over$cd4count)
-over$STADE <- as.factor(over$STADE)
-over$tlc12 <- as.factor(over$tlc12)
-over$SEXE <- as.factor(over$SEXE)
+over <- read.csv("over.csv", header = TRUE)
 
 pageWithSidebar(                
                 # Page header
