@@ -2,7 +2,7 @@ library(shiny)
 library(shinythemes)
 
 # Training set
-over <- read.csv("over.csv", header = TRUE)
+over <- read.csv(text = getURL("https://github.com/saadlamjadli/app/blob/main/over.csv") )
 
 pageWithSidebar(                
                 # Page header
