@@ -6,7 +6,7 @@ model <- readRDS("model.rds")
 
 shinyServer(function(input, output, session) {  
   # Input 
-   datasetInput <- reactive({  
+   setInput <- reactive({  
     
     # outlook,temperature,humidity,windy,play
     df <- data.frame(
@@ -52,9 +52,9 @@ shinyServer(function(input, output, session) {
   })
   
   # Prediction results table
-  output$tabledata <- renderTable({
+  output$table <- renderTable({
     if (input$submitbutton>0) { 
-       isolate(datasetInput())
+       isolate(setInput())
     } 
   })
   
