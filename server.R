@@ -1,6 +1,5 @@
 library(data.table)
-library(ROSE)
-library(randomForest)
+library(xgboost)
 
 # Read in the RF model
 model <- readRDS("model.rds")
