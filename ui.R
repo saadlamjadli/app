@@ -2,6 +2,7 @@ library(shiny)
 library(shinythemes)
 library(data.table)
 library(RCurl)
+library(randomForest)
 
 
 # Training set
