@@ -6,9 +6,11 @@ library(RCurl)
 
 over <- read.csv("over.csv", header = TRUE,check.names = FALSE)
 # Read in the RF model
+library(randomForest)
 
 model <- readRDS("model.rds")
 
+library(randomForest)
 
 
 shinyServer(function(input, output, session) {  
