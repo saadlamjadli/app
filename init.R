@@ -4,7 +4,7 @@
 #
 
 
-my_packages = c("devtools","data.table","xgboost")
+my_packages = c("data.table","xgboost")
 
 
 install_if_missing = function(p) {
@@ -15,4 +15,4 @@ install_if_missing = function(p) {
 
 invisible(sapply(my_packages, install_if_missing))
 
-install_version("randomForest", version = "4.0.1.", repos = "http://cran.us.r-project.org")
+install.packages("/app/randomForest-4.0-1.tar.gz", repos=NULL, type="source")
