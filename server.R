@@ -13,7 +13,7 @@ model <- readRDS("model.rds")
 library(randomForest)
 
 
-server <- function(input, output, session) {  
+shinyServer(function(input, output, session) {  
   # Input 
    datasetInput <- reactive({  
     
@@ -68,4 +68,4 @@ server <- function(input, output, session) {
     } 
   })
   
-}
+})
