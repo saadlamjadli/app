@@ -6,7 +6,7 @@ library(randomForest)
 
 
 # Training set
-over <- read.csv("over.csv", header = TRUE,check.names = FALSE)
+over <- read.csv("over.csv", header = TRUE)
 
 pageWithSidebar(                
                 # Page header
