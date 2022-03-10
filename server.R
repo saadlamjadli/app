@@ -44,6 +44,8 @@ shinyServer(function(input, output, session) {
     input <- transpose(df)
     write.table(input,"input.csv", sep=",", quote = FALSE, row.names = FALSE, col.names = FALSE)
     test <- read.csv(paste("input", ".csv", sep=""), header = TRUE)
+    test <- rbind(over[1,], test)
+    test <- test[-1,]
   
 
      
