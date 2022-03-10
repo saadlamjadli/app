@@ -2,9 +2,13 @@ library(data.table)
 library(randomForest)
 library(RCurl)
 
-
 over <- read.csv("over.csv", header = TRUE)
-
+common <- intersect(names(train), names(test)) 
+for (p in common) { 
+  if (class(train[[p]]) == "factor") { 
+    levels(test[[p]]) <- levels(train[[p]]) 
+  } 
+}
 # Read in the RF model
 library(randomForest)
 
@@ -46,6 +50,7 @@ shinyServer(function(input, output, session) {
     test <- read.csv(paste("input", ".csv", sep=""), header = TRUE)
     test <- rbind(over[1,], test)
     test <- test[-1,]
+    common 
   
 
      
