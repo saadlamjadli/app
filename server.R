@@ -1,12 +1,7 @@
 library(data.table)
 library(randomForest)
 library(RCurl)
-common <- intersect(names(train), names(test)) 
-for (p in common) { 
-  if (class(train[[p]]) == "factor") { 
-    levels(test[[p]]) <- levels(train[[p]]) 
-  } 
-}
+
 
 over <- read.csv("over.csv", header = TRUE)
 
