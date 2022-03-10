@@ -39,7 +39,7 @@ shinyServer(function(input, output, session) {
                              input$tlc12)),
       stringsAsFactors = FALSE)
     
-    cd4count <- "cd4count"
+    cd4count <- 0
     df <- rbind(df, cd4count)
     input <- transpose(df)
     write.table(input,"input.csv", sep=",", quote = FALSE, row.names = FALSE, col.names = FALSE)
