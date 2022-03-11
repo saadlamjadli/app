@@ -14,14 +14,14 @@ pageWithSidebar(
                 
                 # Input values
                 sidebarPanel(
-                  HTML("<h3>Input parameters</h3>"),
+                  HTML("<h3>Paramètres d'entrée</h3>"),
                   selectInput("SEXE", label = "SEXE:", 
                               choices = list("homme" = "1", "femme" = "2"), 
                               selected = "1"),
                   sliderInput("AGE", label = "age :",
                               min = 0, max = 100,
                               value = 0),
-                  selectInput("STADE", label = "STADE:", 
+                  selectInput("STADE", label = "STADE CDC du VIH:", 
                               choices = list("1" = "1", "2" = "2", "3"="3"), 
                               selected = "0"),
                   sliderInput("hb", label = "hemoglobine:",
@@ -48,7 +48,7 @@ pageWithSidebar(
 
   
 mainPanel(
-          tags$label(h3('Status/Output')), # Status/Output Text Box
+          tags$label(h3('État/résultat')), # Status/Output Text Box
           verbatimTextOutput('contents'),
           tableOutput('tabledata') # Prediction results table
                   
