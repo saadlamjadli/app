@@ -1,6 +1,5 @@
 library(data.table)
 library(randomForest)
-library(RCurl)
 
 
 over <- read.csv("over.csv", header = TRUE)
@@ -10,7 +9,6 @@ library(randomForest)
 
 model <- readRDS("model.rds")
 
-library(randomForest)
 
 
 shinyServer(function(input, output, session) {  
