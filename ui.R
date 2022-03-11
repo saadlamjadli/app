@@ -10,7 +10,7 @@ over <- read.csv("over.csv", header = TRUE)
 
 pageWithSidebar(                
                 # Page header
-                headerPanel("lymphocyte prediction/ Laboratoire d'immunologie"),
+                headerPanel("Prédiction du nombre de lymphocytes/ Laboratoire d'immunologie"),
                 
                 # Input values
                 sidebarPanel(
