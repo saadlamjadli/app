@@ -48,6 +48,7 @@ shinyServer(function(input, output, session) {
     test$STADE <- factor(test$STADE, levels = c("1","2","3"))
     test$tlc12 <- factor(test$tlc12, levels=c("0","1"))
     test$cd4count <- factor(test$cd4count, levels = c("0","1"))
+    test$cd4count <- factor(test$cd4count, labels = c("CD4 < 200", "CD4 >=200"))
      
     Output <- data.frame(Prediction=predict(model,test), round(predict(model,test,type="prob"), 3))
     print(Output)
