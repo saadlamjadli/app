@@ -4,7 +4,7 @@
 #
 
 
-my_packages = c("data.table","xgboost")
+my_packages = c("data.table","xgboost", "shiny")
 
 
 install_if_missing = function(p) {
