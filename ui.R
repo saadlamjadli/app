@@ -38,7 +38,7 @@ pageWithSidebar(
                               value = 0),
                   sliderInput("ht", "HEMATOCRITE:",
                               min = 30, max = 60,
-                              value = 40),
+                              value = 30),
                   selectInput("tlc12", label = "NOMBRE DE LYMPHOCYTES:", 
                               choices = list("<1200" = "0", ">=1200" = "1"), 
                               selected = "0"),
