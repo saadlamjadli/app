@@ -1,6 +1,5 @@
 library(shiny)
 library(data.table)
-library(RCurl)
 library(randomForest)
 
 
