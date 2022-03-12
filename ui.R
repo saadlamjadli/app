@@ -14,7 +14,7 @@ pageWithSidebar(
                 
                 # Input values
                 sidebarPanel(
-                  HTML("<h3>Paramètres d'entrée</h3>"),
+                  HTML("<h2>Paramètres d'entrée</h2>"),
                   selectInput("SEXE", label = "GENRE:", 
                               choices = list("Homme" = "1", "Femme" = "2"), 
                               selected = "1"),
