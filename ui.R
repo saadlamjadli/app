@@ -35,7 +35,7 @@ pageWithSidebar(
                               value = 1),
                   sliderInput("plq", label = "PLAQUETTE:",
                               min = 10, max = 500,
-                              value = 0),
+                              value = 10),
                   sliderInput("ht", "HEMATOCRITE:",
                               min = 30, max = 60,
                               value = 30),
