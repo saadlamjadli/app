@@ -43,7 +43,7 @@ pageWithSidebar(
                               choices = list("<1200" = "0", ">=1200" = "1"), 
                               selected = "0"),
                   
-                  actionButton("submitbutton", "Submit", class = "btn btn-primary")
+                  actionButton("submitbutton", "soumettre", class = "btn btn-primary")
 ),
 
   
