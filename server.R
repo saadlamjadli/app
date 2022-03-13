@@ -25,7 +25,7 @@ shinyServer(function(input, output, session) {
                "gr",
                "plq",
                "ht",
-               "tlc12"),
+               "tlc11"),
       Value = as.character(c(input$SEXE,
                              input$AGE,
                              input$STADE,
@@ -34,7 +34,7 @@ shinyServer(function(input, output, session) {
                              input$gr,
                              input$plq,
                              input$ht,
-                             input$tlc12)),
+                             input$tlc11)),
       stringsAsFactors = FALSE)
     
     cd4count <- "cd4count"
@@ -46,8 +46,8 @@ shinyServer(function(input, output, session) {
     test <- test[-1,]
     test$SEXE <- factor(test$SEXE, levels=c("1","2"))
     test$STADE <- factor(test$STADE, levels = c("1","2","3"))
-    test$tlc12 <- factor(test$tlc12, levels=c("0","1"))
-    test$cd4count <- factor(test$cd4count, levels = c("0","1"))  
+    test$tlc11 <- factor(test$tlc12, levels=c("0","1"))
+    test$cd4count <- factor(test$cd4count, labels = c("CD4.inf.à.200","CD4.sup.ou.égal.à.200"))  
      
     Output <- data.frame(Prediction=predict(model,test), round(predict(model,test,type="prob"), 3))
     print(Output)
@@ -57,7 +57,7 @@ shinyServer(function(input, output, session) {
   # Status/Output Text Box
   output$contents <- renderPrint({
     if (input$submitbutton>0) { 
-      isolate("Calcul terminé | 0 = CD4 <200 | 1 = CD4 >= 200 ") 
+      isolate("Calcul terminé) 
     } else {
       return("Le serveur est prêt pour le calcul.")
     }
