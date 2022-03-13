@@ -38,7 +38,7 @@ pageWithSidebar(
                               min = 30, max = 60,
                               value = 30),
                   selectInput("tlc12", label = "NOMBRE DE LYMPHOCYTES:", 
-                              choices = list("<1200" = "0", ">=1200" = "1"), 
+                              choices = list("<1100" = "0", ">=1100" = "1"), 
                               selected = "0"),
                   
                   actionButton("submitbutton", "soumettre", class = "btn btn-primary")
