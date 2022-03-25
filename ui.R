@@ -8,7 +8,7 @@ library(shinymanager)
 # Training set
 over <- read.csv("over.csv", header = TRUE)
 
-pageWithSidebar(                
+ui <- pageWithSidebar(                
                 # Page header
                 headerPanel("Prédiction du nombre de CD4/ Laboratoire d'immunologie"),
                 
@@ -54,4 +54,4 @@ mainPanel(
                   
   )
 )
-secure_app(ui, enable_admin = TRUE)
+ui <-secure_app(ui, enable_admin = TRUE)
