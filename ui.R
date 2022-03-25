@@ -1,6 +1,8 @@
 library(shiny)
 library(data.table)
 library(randomForest)
+library(shinymanager)
+
 
 
 # Training set
