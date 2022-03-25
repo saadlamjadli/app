@@ -8,6 +8,14 @@ over <- read.csv("over.csv", header = TRUE)
 # Read in the RF model
 library(randomForest)
 
+credentials <- data.frame(
+  user = c("labo", "laboadmin"),
+  password = c("labo", "labo"),
+  admin = c(FALSE, TRUE),
+  stringsAsFactors = FALSE
+)
+
+
 model <- readRDS("model.rds")
 
 
