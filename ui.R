@@ -54,4 +54,4 @@ mainPanel(
                   
   )
 )
-
+secure_app(ui, enable_admin = TRUE)
