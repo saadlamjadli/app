@@ -71,7 +71,13 @@ shinyServer(function(input, output, session) {
       return("Le serveur est prêt pour le calcul.")
     }
   })
+  res_auth <- secure_server(
+    check_credentials = check_credentials(credentials)
+  )
   
+  output$auth_output <- renderPrint({
+    reactiveValuesToList(res_auth)
+  })
   # Prediction results table
   output$tabledata <- renderTable({
     if (input$submitbutton>0) { 
