@@ -3,13 +3,15 @@ library(data.table)
 library(randomForest)
 library(RMySQL)
 library(DT)
+library(caret)
+library(tidyverse)
 
 
 
 # Training set
 over <- read.csv("over.csv", header = TRUE)
 
-ui <- fluidPage(                
+         fluidPage(                
                 # Page header
                 headerPanel("Prédiction du nombre de CD4/ Laboratoire d'immunologie"),
                 
