@@ -12,9 +12,11 @@ model <- readRDS("model.rds")
 
 
 
-shinyServer(function(input, output, session) {  
+shinyServer(function(input, output, session) {
+  table <- "responses"
   # Input 
-   datasetInput <- reactive({  
+   datasetInput <- reactive({
+     table <- "responses"
     
     # outlook,temperature,humidity,windy,play
     df <- data.frame(
