@@ -59,11 +59,12 @@ shinyServer(function(input, output, session) {
   # Status/Output Text Box
   output$contents <- renderPrint({
     if (input$submitbutton>0) { 
-      isolate("Calcul terminé") 
+      isolate("Calculation complete.") 
     } else {
-      return("Le serveur est prêt pour le calcul.")
+      return("Server is ready for calculation.")
     }
   })
+  
   saveDataSql <- function(query) {
     con = dbConnect(RMySQL::MySQL(), dbname  =  "sql10481134", host = "sql10.freesqldatabase.com", user = "sql10481134", password = "B65338wjdr", port = 3306)
     dbGetQuery(con, query)
@@ -76,11 +77,13 @@ shinyServer(function(input, output, session) {
     saveDataSql(query) 
   })
   
+
   # Prediction results table
-  output$tabledata <- renderTable({
+  output$table <- renderTable({
     if (input$submitbutton>0) { 
-       isolate(datasetInput())
+      isolate(setInput()) 
     } 
   })
   
 })
+
