@@ -8,14 +8,6 @@ over <- read.csv("over.csv", header = TRUE)
 # Read in the RF model
 library(randomForest)
 
-credentials <- data.frame(
-  user = c("labo", "laboadmin"),
-  password = c("labo", "labo"),
-  admin = c(FALSE, TRUE),
-  stringsAsFactors = FALSE
-)
-
-
 model <- readRDS("model.rds")
 
 
@@ -71,13 +63,18 @@ shinyServer(function(input, output, session) {
       return("Le serveur est prêt pour le calcul.")
     }
   })
-  res_auth <- secure_server(
-    check_credentials = check_credentials(credentials)
-  )
+  saveDataSql <- function(query) {
+    con = dbConnect(RMySQL::MySQL(), dbname  =  "sql10481134", host = "sql10.freesqldatabase.com", user = "sql10481134", password = "B65338wjdr", port = 3306)
+    dbGetQuery(con, query)
+    dbDisconnect(con)
+  }
   
-  output$auth_output <- renderPrint({
-    reactiveValuesToList(res_auth)
+  observeEvent(input$submitbutton,{
+    query <- sprintf<-(paste("INSERT INTO `prediction` (`SEXE`, `AGE`,`STADE`,`cd4count`,`hb`,`vgm`,`gr`, `plq`, `ht`,`tlc11`,`prediction`, `X0`,`X1`) VALUES ('", input$SEXE, " ','", input$AGE, " ','", input$STADE, " ','", input$cd4count," ','",input$hb,
+                             " ','", input$vgm," ','",input$gr," ','",input$plq," ','",input$ht," ','",input$tlc11," ','", Output$Prediction," ','", Output$CD4.inf.200," ','", Output$CD4.sup.ou.égal.200,"');", sep = ""))
+    saveDataSql(query) 
   })
+  
   # Prediction results table
   output$tabledata <- renderTable({
     if (input$submitbutton>0) { 
