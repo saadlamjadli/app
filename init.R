@@ -4,7 +4,8 @@
 #
 
 
-my_packages = c("data.table","xgboost", "shiny","RMySQL")
+my_packages = c("data.table","xgboost", "shiny","RMySQL","tidyverse")
+)
 
 
 install_if_missing = function(p) {
