@@ -12,7 +12,7 @@ model <- readRDS("model.rds")
 
 
 
-shinyServer(function(input, output, session) {
+server <- shinyServer(function(input, output, session) {
   table <- "responses"
   # Input 
    datasetInput <- reactive({
