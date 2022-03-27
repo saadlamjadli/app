@@ -10,7 +10,7 @@ library(tidyverse)
 # Training set
 over <- read.csv("over.csv", header = TRUE)
 
-pageWithSidebar(                
+ui <- fluidPage(                
                 # Page header
                 headerPanel("Prédiction du nombre de CD4/ Laboratoire d'immunologie"),
                 
