@@ -4,7 +4,7 @@
 #
 
 
-my_packages = c("data.table","xgboost", "shiny","RMySQL","tidyverse")
+my_packages = c("data.table","shiny","RMySQL")
 )
 
 
