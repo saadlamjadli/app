@@ -2,6 +2,8 @@ library(data.table)
 library(randomForest)
 library(RMySQL)
 library(DT)
+library(caret)
+library(tidyverse)
 
 
 
@@ -16,9 +18,7 @@ model <- readRDS("model.rds")
 
 shinyServer(function(input, output, session) {
   # Input 
-   datasetInput <- reactive({
-     table <- "responses"
-    
+   datasetInput <- reactive({    
     # outlook,temperature,humidity,windy,play
     df <- data.frame(
       Name = c("SEXE",
@@ -74,7 +74,7 @@ shinyServer(function(input, output, session) {
   }
   
   observeEvent(input$submitbutton,{
-    query <- sprintf<-(paste("INSERT INTO `prediction` (`SEXE`, `AGE`,`STADE`,`cd4count`,`hb`,`vgm`,`gr`, `plq`, `ht`,`tlc11`,`prediction`, `X0`,`X1`) VALUES ('", input$SEXE, " ','", input$AGE, " ','", input$STADE, " ','", input$cd4count," ','",input$hb,
+    query <- sprintf<-(paste("INSERT INTO `prediction` (`SEXE`, `AGE`,`STADE`,`hb`,`vgm`,`gr`, `plq`, `ht`,`tlc11`,`prediction`, `X0`,`X1`) VALUES ('", input$SEXE, " ','", input$AGE, " ','", input$STADE," ','",input$hb,
                              " ','", input$vgm," ','",input$gr," ','",input$plq," ','",input$ht," ','",input$tlc11," ','", Output$Prediction," ','", Output$CD4.inf.200," ','", Output$CD4.sup.ou.égal.200,"');", sep = ""))
     saveDataSql(query) 
   })
