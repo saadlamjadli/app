@@ -10,7 +10,7 @@ library(DT)
 # Training set
 over <- read.csv("over.csv", header = TRUE)
 
- ui <- fluidPage(
+           fluidPage(
                 
                 # Page header
                 headerPanel("lymphocyte prediction/ Laboratoire d'immunologie"),
