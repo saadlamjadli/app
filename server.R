@@ -2,9 +2,6 @@ library(data.table)
 library(randomForest)
 library(RMySQL)
 library(DT)
-library(caret)
-library(tidyverse)
-
 
 
 over <- read.csv("over.csv", header = TRUE)
