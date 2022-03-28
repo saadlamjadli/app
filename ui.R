@@ -43,7 +43,7 @@ over <- read.csv("over.csv", header = TRUE)
                               min = 0, max = 80,
                               value = 0),
                   selectInput("tlc11", label = "lymphocyte:", 
-                              choices = list("<1200" = "0", ">=1200" = "1"), 
+                              choices = list("<1100" = "0", ">=1100" = "1"), 
                               selected = "0"),
                   
                   actionButton("submitbutton", "Submit", class = "btn btn-primary")
