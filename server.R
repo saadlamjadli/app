@@ -46,6 +46,12 @@ shinyServer(function(input, output, session) {
     test <- read.csv(paste("input", ".csv", sep=""), header = TRUE)
     test <- rbind(over[1,], test)
     test <- test[-1,]
+    test$STADE <- factor(test$STADE, labels  = c("1", "2","3"))
+    test$SEXE <- factor(test$SEXE, labels  = c("1", "2"))
+    test$cd4count <- factor(test$cd4count, labels  = c("CD4.inf.200", "CD4.sup.ou.égal.200"))
+    test$tlc11 <- factor(test$tlc11, labels  = c("0", "1"))
+
+    
     Output <- data.frame(Prediction=predict(model,test), round(predict(model,test,type="prob"), 3))
     print(Output)
     
