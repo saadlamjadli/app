@@ -7,7 +7,7 @@ library(randomForest)
 over <- read.csv("over.csv", header = TRUE)
 
 # Read in the RF model
-library(randomForest)
+
 
 model <- readRDS("model.rds")
 
