@@ -2,7 +2,6 @@ library(data.table)
 library(randomForest)
 library(RMySQL)
 
-con = dbConnect(RMySQL::MySQL(), dbname  =  "heroku_055042ac25d042c", host = "us-cdbr-east-05.cleardb.net", user = "bd1b49da1d0612", password = "4af9041c", port = 3306)
 
 
 over <- read.csv("over.csv", header = TRUE)
@@ -65,18 +64,6 @@ shinyServer(function(input, output, session) {
     } else {
       return("Server is ready for calculation.")
     }
-  })
-  
-  saveDataSql <- function(query) {
-    con = dbConnect(RMySQL::MySQL(), dbname  =  "heroku_055042ac25d042c", host = "us-cdbr-east-05.cleardb.net", user = "bd1b49da1d0612", password = "4af9041c", port = 3306)
-    dbGetQuery(con, query)
-    dbDisconnect(con)
-  }
-  
-  observeEvent(input$submitbutton,{
-    query <- sprintf<-(paste("INSERT INTO `prediction` (`SEXE`, `AGE`,`STADE`,`cd4count`,`hb`,`vgm`,`gr`, `plq`, `ht`,`tlc11`,`prediction`, `X0`,`X1`) VALUES ('", input$SEXE, " ','", input$AGE, " ','", input$STADE, " ','", input$cd4count," ','",input$hb,
-                             " ','", input$vgm," ','",input$gr," ','",input$plq," ','",input$ht," ','",input$tlc11," ','", Output$Prediction," ','", Output$CD4.inf.200," ','", Output$CD4.sup.ou.égal.200,"');", sep = ""))
-    saveDataSql(query) 
   })
   
   # Prediction results table
