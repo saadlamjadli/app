@@ -4,7 +4,7 @@
 #
 
 
-my_packages = c("data.table","shiny")
+my_packages = c("data.table","shiny","RMySQL")
 
 
 install_if_missing = function(p) {
