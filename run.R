@@ -4,6 +4,6 @@ port <- Sys.getenv('PORT')
 
 shiny::runApp(
   appDir = getwd(),
-  host = '0.0.0.0',
-  port = as.numeric(port)
+  host = 'us-cdbr-east-05.cleardb.net',
+  port = as.numeric(3306)
 )
