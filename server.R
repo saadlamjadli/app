@@ -14,11 +14,10 @@ library(randomForest)
 
 model <- readRDS("model.rds")
 
-
-
 shinyServer(function(input, output, session) {
   # Input 
    datasetInput <- reactive({    
+     table <- "responses"
     # outlook,temperature,humidity,windy,play
     df <- data.frame(
       Name = c("SEXE",
@@ -68,7 +67,7 @@ shinyServer(function(input, output, session) {
   })
   
   saveDataSql <- function(query) {
-    con = dbConnect(RMySQL::MySQL(), dbname  =  "sql10481134", host = "sql10.freesqldatabase.com", user = "sql10481134", password = "B65338wjdr", port = 3306)
+    con = dbConnect(RMySQL::MySQL(), dbname  =  "heroku_055042ac25d042c", host = "us-cdbr-east-05.cleardb.net", user = "bd1b49da1d0612", password = "4af9041c", port = 3306)
     dbGetQuery(con, query)
     dbDisconnect(con)
   }
