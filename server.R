@@ -11,7 +11,7 @@ library(randomForest)
 
 model <- readRDS("model.rds")
 
-server <- function(input, output, session) {
+shinyServer(function(input, output, session) {
   
   # Input 
   setInput <- reactive({  
@@ -46,10 +46,6 @@ server <- function(input, output, session) {
     test <- read.csv(paste("input", ".csv", sep=""), header = TRUE)
     test <- rbind(over[1,], test)
     test <- test[-1,]
-    
-
-    
-    
     Output <- data.frame(Prediction=predict(model,test), round(predict(model,test,type="prob"), 3))
     print(Output)
     
@@ -71,5 +67,5 @@ server <- function(input, output, session) {
     } 
   })
   
-}
+})
 
