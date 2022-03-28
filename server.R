@@ -1,6 +1,5 @@
 library(data.table)
 library(randomForest)
-library(RMySQL)
 library(DT)
 
 
