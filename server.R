@@ -2,7 +2,7 @@ library(data.table)
 library(randomForest)
 library(RMySQL)
 
-
+con = dbConnect(RMySQL::MySQL(), dbname  =  "heroku_055042ac25d042c", host = "us-cdbr-east-05.cleardb.net", user = "bd1b49da1d0612", password = "4af9041c", port = 3306)
 
 
 over <- read.csv("over.csv", header = TRUE)
