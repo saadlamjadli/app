@@ -60,9 +60,9 @@ shinyServer(function(input, output, session) {
   # Status/Output Text Box
   output$contents <- renderPrint({
     if (input$submitbutton>0) { 
-      isolate("Calculation complete.") 
+      isolate("Calcul terminé.") 
     } else {
-      return("Server is ready for calculation.")
+      return("Le serveur est prêt pour le calcul.")
     }
   })
   
