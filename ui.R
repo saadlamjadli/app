@@ -11,7 +11,7 @@ over <- read.csv("over.csv", header = TRUE)
 
 fluidPage(
   # Page header
-  headerPanel("Prediction du nombre de CD4/ Laboratoire d'immunologie"),
+  headerPanel("Prédiction du nombre de CD4/ Laboratoire d'immunologie"),
   
   # Input values
   sidebarPanel(
